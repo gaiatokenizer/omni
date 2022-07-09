@@ -1,31 +1,31 @@
 {
   "abi": [],
   "bytecode": {
-    "object": "0x6080604052348015600f57600080fd5b50603f80601d6000396000f3fe6080604052600080fdfea264697066735822122018fa82fabcc96644d1fe3d079d477da1adf085c8ed54b43406d435f0586f356864736f6c634300080f0033",
-    "sourceMap": "65:20:7:-:0;;;;;;;;;;;;;;;;;;;",
+    "object": "0x6080604052348015600f57600080fd5b50603f80601d6000396000f3fe6080604052600080fdfea26469706673582212205565730e1c89576655a3b2ddbd677f8c38bced34b0d6003135e602bedb1ab29264736f6c634300080d0033",
+    "sourceMap": "65:20:19:-:0;;;;;;;;;;;;;;;;;;;",
     "linkReferences": {}
   },
   "deployedBytecode": {
-    "object": "0x6080604052600080fdfea264697066735822122018fa82fabcc96644d1fe3d079d477da1adf085c8ed54b43406d435f0586f356864736f6c634300080f0033",
-    "sourceMap": "65:20:7:-:0;;;;;",
+    "object": "0x6080604052600080fdfea26469706673582212205565730e1c89576655a3b2ddbd677f8c38bced34b0d6003135e602bedb1ab29264736f6c634300080d0033",
+    "sourceMap": "65:20:19:-:0;;;;;",
     "linkReferences": {}
   },
   "methodIdentifiers": {},
   "ast": {
     "absolutePath": "src/Contract.sol",
-    "id": 21115,
+    "id": 23063,
     "exportedSymbols": {
       "Contract": [
-        21114
+        23062
       ]
     },
     "nodeType": "SourceUnit",
-    "src": "39:47:7",
+    "src": "39:47:19",
     "nodes": [
       {
-        "id": 21113,
+        "id": 23061,
         "nodeType": "PragmaDirective",
-        "src": "39:24:7",
+        "src": "39:24:19",
         "literals": [
           "solidity",
           "^",
@@ -34,9 +34,9 @@
         ]
       },
       {
-        "id": 21114,
+        "id": 23062,
         "nodeType": "ContractDefinition",
-        "src": "65:20:7",
+        "src": "65:20:19",
         "abstract": false,
         "baseContracts": [],
         "canonicalName": "Contract",
@@ -44,15 +44,15 @@
         "contractKind": "contract",
         "fullyImplemented": true,
         "linearizedBaseContracts": [
-          21114
+          23062
         ],
         "name": "Contract",
-        "nameLocation": "74:8:7",
-        "scope": 21115,
+        "nameLocation": "74:8:19",
+        "scope": 23063,
         "usedErrors": []
       }
     ],
     "license": "UNLICENSED"
   },
-  "id": 7
+  "id": 19
 }
