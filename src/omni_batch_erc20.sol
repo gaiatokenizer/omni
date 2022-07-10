@@ -8,6 +8,52 @@ import "@openzeppelin/contracts/security/Pausable.sol";
 import "@openzeppelin/contracts/access/AccessControl.sol";
 import "@openzeppelin/contracts/token/ERC20/extensions/draft-ERC20Permit.sol";
 
+contract OmniRecycleFactory is AccessControl {
+    bytes32 public constant CREATOR_ROLE = keccak256("CREATOR_ROLE");
+
+    event NewRecycleCreditToken(address token, bytes32 hashID, string name, string symbol);
+
+    struct RecycleCreditToken {
+        address token;
+        bytes32 hashID;
+        string name;
+        string symbol;
+    }
+
+    RecycleCreditToken[] public creditTokens;
+    mapping(bytes32 => address) public existingTokens;
+
+    constructor() {
+        _grantRole(DEFAULT_ADMIN_ROLE, msg.sender);
+        _grantRole(CREATOR_ROLE, msg.sender);
+    }
+
+    function getTotalTokens() public view returns (uint256) {
+        return creditTokens.length;
+    }
+
+    function generateNewRecycleCreditToken(
+        string memory _name, 
+        string memory _symbol, 
+        address _coletador, 
+        address _recicladora, 
+        string memory _govCategory
+    ) external  onlyRole(CREATOR_ROLE) returns (bool) {
+        bytes32 hashID = keccak256(abi.encode(_name, _symbol));
+        address exists = existingTokens[hashID];
+        require(exists==address(0x0), "a token using same name was already minted");
+
+        OmniRecycle token = new OmniRecycle(_name, _symbol, _coletador, _recicladora, _govCategory);
+        RecycleCreditToken memory creditToken = RecycleCreditToken(address(token), hashID, _name, _symbol);
+        creditTokens.push(creditToken);
+        existingTokens[hashID] = address(token);
+        emit NewRecycleCreditToken(address(token), hashID, _name, _symbol);
+        return true;
+    }
+
+}
+
+
 contract OmniRecycle is ERC20, ERC20Burnable, Pausable, AccessControl, ERC20Permit {
     bytes32 public constant PAUSER_ROLE = keccak256("PAUSER_ROLE");
     bytes32 public constant MINTER_ROLE = keccak256("MINTER_ROLE");
@@ -43,9 +89,14 @@ contract OmniRecycle is ERC20, ERC20Burnable, Pausable, AccessControl, ERC20Perm
     string public govCategory;
     uint256 public recycledAmount;
 
-    constructor(address _coletador, address _recicladora, string memory _govCategory) ERC20("OmniRecycle", "OMRC") ERC20Permit("OmniRecycle") {
+    constructor(string memory _name, string memory _symbol, address _coletador, address _recicladora, string memory _govCategory) 
+        ERC20(_name, _symbol) 
+        ERC20Permit(_name) 
+    {
         _grantRole(DEFAULT_ADMIN_ROLE, msg.sender);
+        _grantRole(DEFAULT_ADMIN_ROLE, _coletador);
         _grantRole(PAUSER_ROLE, msg.sender);
+        _grantRole(MINTER_ROLE, _coletador);
         _grantRole(MINTER_ROLE, msg.sender);
         coletador = _coletador;
         recicladora = _recicladora;

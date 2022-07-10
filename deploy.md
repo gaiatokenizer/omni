@@ -29,3 +29,14 @@ $forge verify-contract --chain-id 4 --num-of-optimizations 200 --compiler-versio
 ```
 
 
+## Deploy Factory
+
+```bash
+$forge flatten --output src/omni_batch_erc20.flattened.sol src/omni_batch_erc20.sol
+```
+
+```bash
+$source .env
+$forge create --legacy --rpc-url $RPC_URL --private-key $PRIVATE_KEY src/omni_batch_erc20.flattened.sol:OmniRecycleFactory --etherscan-api-key $ETHERSCAN_KEY --verify
+
+$forge verify-contract --chain-id 4 --num-of-optimizations 200 --compiler-version v0.8.13+commit.abaa5c0e 0xec622715b9341e8fa9e981b68db36f40aaa130b0 src/omni_batch_erc20.flattened.sol:OmniRecycleFactory $ETHERSCAN_KEY

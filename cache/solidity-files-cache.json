@@ -1489,9 +1489,98 @@
         }
       }
     },
+    "src/omni_batch_erc20.flattened.sol": {
+      "lastModificationDate": 1657461269702,
+      "contentHash": "dc0dcee6a4b93b73419d544c4cd98589",
+      "sourceName": "src/omni_batch_erc20.flattened.sol",
+      "solcConfig": {
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "metadata": {
+            "bytecodeHash": "ipfs"
+          },
+          "outputSelection": {
+            "*": {
+              "": [
+                "ast"
+              ],
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ]
+            }
+          },
+          "evmVersion": "london",
+          "libraries": {}
+        }
+      },
+      "imports": [],
+      "versionRequirement": "=0.8.13",
+      "artifacts": {
+        "AccessControl": {
+          "0.8.13+commit.abaa5c0e.Darwin.appleclang": "omni_batch_erc20.flattened.sol/AccessControl.json"
+        },
+        "Context": {
+          "0.8.13+commit.abaa5c0e.Darwin.appleclang": "omni_batch_erc20.flattened.sol/Context.json"
+        },
+        "Counters": {
+          "0.8.13+commit.abaa5c0e.Darwin.appleclang": "omni_batch_erc20.flattened.sol/Counters.json"
+        },
+        "ECDSA": {
+          "0.8.13+commit.abaa5c0e.Darwin.appleclang": "omni_batch_erc20.flattened.sol/ECDSA.json"
+        },
+        "EIP712": {
+          "0.8.13+commit.abaa5c0e.Darwin.appleclang": "omni_batch_erc20.flattened.sol/EIP712.json"
+        },
+        "ERC165": {
+          "0.8.13+commit.abaa5c0e.Darwin.appleclang": "omni_batch_erc20.flattened.sol/ERC165.json"
+        },
+        "ERC20": {
+          "0.8.13+commit.abaa5c0e.Darwin.appleclang": "omni_batch_erc20.flattened.sol/ERC20.json"
+        },
+        "ERC20Burnable": {
+          "0.8.13+commit.abaa5c0e.Darwin.appleclang": "omni_batch_erc20.flattened.sol/ERC20Burnable.json"
+        },
+        "ERC20Permit": {
+          "0.8.13+commit.abaa5c0e.Darwin.appleclang": "omni_batch_erc20.flattened.sol/ERC20Permit.json"
+        },
+        "IAccessControl": {
+          "0.8.13+commit.abaa5c0e.Darwin.appleclang": "omni_batch_erc20.flattened.sol/IAccessControl.json"
+        },
+        "IERC165": {
+          "0.8.13+commit.abaa5c0e.Darwin.appleclang": "omni_batch_erc20.flattened.sol/IERC165.json"
+        },
+        "IERC20": {
+          "0.8.13+commit.abaa5c0e.Darwin.appleclang": "omni_batch_erc20.flattened.sol/IERC20.json"
+        },
+        "IERC20Metadata": {
+          "0.8.13+commit.abaa5c0e.Darwin.appleclang": "omni_batch_erc20.flattened.sol/IERC20Metadata.json"
+        },
+        "IERC20Permit": {
+          "0.8.13+commit.abaa5c0e.Darwin.appleclang": "omni_batch_erc20.flattened.sol/IERC20Permit.json"
+        },
+        "OmniRecycle": {
+          "0.8.13+commit.abaa5c0e.Darwin.appleclang": "omni_batch_erc20.flattened.sol/OmniRecycle.json"
+        },
+        "OmniRecycleFactory": {
+          "0.8.13+commit.abaa5c0e.Darwin.appleclang": "omni_batch_erc20.flattened.sol/OmniRecycleFactory.json"
+        },
+        "Pausable": {
+          "0.8.13+commit.abaa5c0e.Darwin.appleclang": "omni_batch_erc20.flattened.sol/Pausable.json"
+        },
+        "Strings": {
+          "0.8.13+commit.abaa5c0e.Darwin.appleclang": "omni_batch_erc20.flattened.sol/Strings.json"
+        }
+      }
+    },
     "src/omni_batch_erc20.sol": {
-      "lastModificationDate": 1657411466932,
-      "contentHash": "f9564a4ac9161cd9cef1ed83ac18c6d4",
+      "lastModificationDate": 1657461179642,
+      "contentHash": "8a39662610e8dd4ddba8735b111e4cf6",
       "sourceName": "src/omni_batch_erc20.sol",
       "solcConfig": {
         "settings": {
@@ -1541,6 +1630,9 @@
       "artifacts": {
         "OmniRecycle": {
           "0.8.13+commit.abaa5c0e.Darwin.appleclang": "omni_batch_erc20.sol/OmniRecycle.json"
+        },
+        "OmniRecycleFactory": {
+          "0.8.13+commit.abaa5c0e.Darwin.appleclang": "omni_batch_erc20.sol/OmniRecycleFactory.json"
         }
       }
     },
